@@ -6,12 +6,6 @@ module.exports = cds.service.impl(async function () {
     // Step-1 : Declare Employee Service from Entities
     const { EmployeeSrv, PurchaseOrderSrv, ProductSrv } = this.entities;
 
-    // Implemenation of an action
-    // There are 3 generic handlers
-    // .before() : Pre-check and validation
-    // .on() : Performing DB operations
-    // .after() : To save / close connections
-
     this.before('UPDATE', EmployeeSrv, async (request, response) => {
         const salaryAmt = request.data.salaryAmount;
 

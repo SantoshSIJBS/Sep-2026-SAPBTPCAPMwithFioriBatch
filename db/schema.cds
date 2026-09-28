@@ -4,6 +4,7 @@ using { cuid, Currency } from '@sap/cds/common';
 using { poapplication.common as common } from './common';
 
 context master {
+
     entity BusinessPartners {
         key NODE_KEY : common.Guid;
             BP_ROLE : common.Role;
