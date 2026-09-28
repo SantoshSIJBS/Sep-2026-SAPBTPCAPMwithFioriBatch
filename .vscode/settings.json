@@ -1,0 +1,11 @@
+{
+    "SAP HANA Database Explorer.ShowXsAdvancedConnections": true,
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "MySQLite",
+            "database": "${workspaceFolder:poapplication}/db.sqlite"
+        }
+    ]
+}

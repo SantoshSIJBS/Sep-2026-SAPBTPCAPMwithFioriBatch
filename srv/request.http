@@ -1,0 +1,230 @@
+
+http://localhost:4004/odata/v4/catalog
+
+
+###
+http://localhost:4004/odata/v4/catalog/ProductSrv
+
+###
+http://localhost:4004/odata/v4/catalog/EmployeeSrv
+
+### Count Number of Employees
+http://localhost:4004/odata/v4/catalog/ProductSrv/$count
+
+### Count Number of Employees
+http://localhost:4004/odata/v4/catalog/ProductSrv?$top=10
+
+### Count Number of Employees
+http://localhost:4004/odata/v4/catalog/ProductSrv?$top=10&$skip=10
+
+###
+http://localhost:4004/odata/v4/catalog/ProductSrv?$filter=CATEGORY eq 'Notebooks'&DIM_UNIT eq 'CM'
+
+###
+http://localhost:4004/odata/v4/catalog/ProductSrv?$select=PRODUCT_ID,DESCRIPTION,CATEGORY,PRICE
+
+###
+http://localhost:4004/odata/v4/catalog/ProductSrv?$orderby=PRODUCT_ID desc
+
+###
+http://localhost:4004/odata/v4/catalog/ProductSrv('74867AD200E41EDBA5D8B06B26F8C052')/PRODUCT_ID
+
+###
+http://localhost:4004/odata/v4/catalog/ProductSrv('74867AD200E41EDBA5D8B06B26F8C052')/PRODUCT_ID/$value
+
+###
+http://localhost:4004/odata/v4/catalog/PurchaseOrderSrv?$expand=Items
+
+###
+POST http://localhost:4004/odata/v4/catalog/createEmployee
+Content-Type: application/json
+
+{
+  "input" : [{
+    "Currency_code": "USD",
+    "ID": "2a5776ec-e711-4c11-a92a-2da5b46c11b8",
+    "accountNumber": null,
+    "bankId": null,
+    "bankName": null,
+    "email": null,
+    "gender": "M",
+    "language": "E",
+    "loginName": "RAMAM",
+    "nameFirst": "Rama",
+    "nameInitials": null,
+    "nameLast": "Murthy",
+    "nameMiddle": null,
+    "phoneNumber": "(+1) 9898989898",
+    "salaryAmount": "45000.00"
+  },
+ {
+    "Currency_code": "USD",
+    "ID": "2a5776ec-e711-4c11-a92a-2da5b46c11b9",
+    "accountNumber": null,
+    "bankId": null,
+    "bankName": null,
+    "email": null,
+    "gender": "M",
+    "language": "E",
+    "loginName": "RAMAM",
+    "nameFirst": "Rama",
+    "nameInitials": null,
+    "nameLast": "Murthy",
+    "nameMiddle": null,
+    "phoneNumber": "(+1) 9898989898",
+    "salaryAmount": "45000.00"
+  }
+  ]
+}
+
+###
+PUT http://localhost:4004/odata/v4/catalog/EmployeeSrv/2a5776ec-e711-4c11-a92a-2da5b46c11b8
+Content-Type: application/json
+
+{
+ "salaryAmount": "105000.00",
+ "Currency_code": "USD"
+}
+
+
+
+###
+GET http://localhost:4004/odata/v4/catalog/getHighestSalariedEmployees()
+
+
+###
+POST http://localhost:4004/odata/v4/catalog/EmployeeSrv
+Content-Type: application/json
+
+{
+    "Currency_code": "USD",
+    "ID": "2a5776ec-e711-4c11-a92a-2da5b46c11b8",
+    "accountNumber": null,
+    "bankId": null,
+    "bankName": null,
+    "email": null,
+    "gender": "M",
+    "language": "E",
+    "loginName": "RAMAM",
+    "nameFirst": "Rama",
+    "nameInitials": null,
+    "nameLast": "Murthy",
+    "nameMiddle": null,
+    "phoneNumber": "(+1) 9898989898",
+    "salaryAmount": "45000.00"
+  }
+
+
+
+
+###
+POST http://localhost:4004/odata/v4/catalog/PurchaseOrderSrv/74867AD200E41EDBA5D8B0C98DC2A052/discountPrice
+Content-Type: application/json
+
+{}
+
+###
+GET http://localhost:4004/odata/v4/catalog/PurchaseOrderSrv/74867AD200E41EDBA5D8B0C98DC2A052/largestOrder()
+
+
+###
+GET http://localhost:4004/odata/v4/catalog/PurchaseOrderSrv
+
+
+### Increase price of product 0033 by 10%
+POST http://localhost:4004/odata/v4/catalog/ProductSrv/74867AD200E41EDBA5D8B06B26EBC052/increasePrice
+Content-Type: application/json
+ 
+{}
+
+
+
+### Read the employee data
+GET http://localhost:4004/odata/v4/catalog/EmployeeSrv
+
+
+###
+POST http://localhost:4004/odata/v4/catalog/createEmployee
+Content-Type: application/json
+
+{
+    "Currency_code": "USD",
+    "ID": "2a5776ec-e711-4c11-a92a-2da5b46c40a3",
+    "accountNumber": null,
+    "bankId": null,
+    "bankName": null,
+    "email": null,
+    "gender": "M",
+    "language": "E",
+    "loginName": "RAMAM",
+    "nameFirst": "Rama",
+    "nameInitials": null,
+    "nameLast": "Murthy",
+    "nameMiddle": null,
+    "phoneNumber": "(+1) 9898989898",
+    "salaryAmount": "45000.00"
+  }
+
+###
+POST http://localhost:4004/odata/v4/catalog/updateEmployee
+Content-Type: application/json
+
+{
+    "ID": "2a5776ec-e711-4c11-a92a-2da5b46c40a2",
+    "salaryAmount": "50000.00",
+    "Currency_code": "USD"
+}
+
+
+###
+POST http://localhost:4004/odata/v4/catalog/deleteEmployee
+Content-Type: application/json
+
+{
+    "ID": "2a5776ec-e711-4c11-a92a-2da5b46c40a2"
+}
+
+###
+POST http://localhost:4004/odata/v4/catalog/createEmployee
+Content-Type: application/json
+
+{
+    "input" : [
+    {
+      "Currency_code": "USD",
+      "ID": "2a5776ec-e711-4c11-a92a-2da5b46c4012",
+      "accountNumber": null,
+      "bankId": null,
+      "bankName": null,
+      "email": null,
+      "gender": "M",
+      "language": "E",
+      "loginName": "ABCDGH",
+      "nameFirst": "ABCD",
+      "nameInitials": null,
+      "nameLast": "EFGH",
+      "nameMiddle": null,
+      "phoneNumber": "(+1) 9898989898",
+      "salaryAmount": "450000.00"
+    },
+    {
+      "Currency_code": "USD",
+      "ID": "2a5776ec-e711-4c11-a92a-2da5b46c4022",
+      "accountNumber": null,
+      "bankId": null,
+      "bankName": null,
+      "email": null,
+      "gender": "M",
+      "language": "E",
+      "loginName": "PQRSWX",
+      "nameFirst": "PQRST",
+      "nameInitials": null,
+      "nameLast": "WXYZ",
+      "nameMiddle": null,
+      "phoneNumber": "(+1) 7878787878",
+      "salaryAmount": "15000.00"
+    }]
+}
+
+### Read the employee data
+GET http://localhost:4004/odata/v4/catalog/getUtilities()

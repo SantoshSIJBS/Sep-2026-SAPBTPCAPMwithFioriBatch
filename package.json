@@ -1,0 +1,26 @@
+{
+  "name": "poapplication",
+  "version": "1.0.0",
+  "dependencies": {
+    "@cap-js/hana": "^3.1.1",
+    "@sap/cds": "^10.0.6",
+    "@sap/xssec": "^4.15.0"
+  },
+  "devDependencies": {
+    "@sap/cds-dk": "^9",
+    "cds-plugin-ui5": "^0.17.0"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch-poaapp": "cds watch --open poaapp.poaapp/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-poapplication": "cds watch --open poapplication/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-poapp": "cds watch --open poapp/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-purchaseorderapp": "cds watch --open purchaseorderapp/index.html?sap-ui-xx-viewCache=false --livereload false"
+  },
+  "workspaces": [
+    "app/*"
+  ],
+  "sapux": [
+    "app/purchaseorderapp"
+  ]
+}
